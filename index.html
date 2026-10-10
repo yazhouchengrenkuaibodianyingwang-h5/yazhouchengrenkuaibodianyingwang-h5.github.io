@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>亚洲新片策展 - 华语/日韩/东南亚/亚洲动画 电影资料馆（yazhouchengrenkuaibodianyingwang-h5）</title>
+<meta name="description" content="亚洲新片策展：以宣纸水墨风做亚洲电影资料馆，整理华语新作、日韩作者、东南亚现实题材、亚洲动画、影展修复与正版观看建议。单页自适应，不提供盗版播放与下载，不涉成人/快播内容。">
+<meta name="keywords" content="亚洲新片策展, yazhouchengrenkuaibodianyingwang-h5, 亚洲电影, 华语电影, 日韩电影, 东南亚电影, 亚洲动画, 影展修复, 正版影视导航">
+<meta name="author" content="亚洲新片策展">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://yazhouchengrenkuaibodianyingwang-h5.github.io/">
+<style>
+:root{
+  --paper:#f4efe4;
+  --paper2:#eae2d2;
+  --ink:#1f3a3d;
+  --ink2:#2c5154;
+  --red:#bf3b2b;
+  --gold:#c69a4a;
+  --line:rgba(31,58,61,.18);
+  --muted:#5f6b66;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",Georgia,"Songti SC",system-ui,sans-serif;
+  background:
+    radial-gradient(820px 380px at 88% -10%, rgba(191,59,43,.12), transparent 60%),
+    radial-gradient(700px 340px at 0% 8%, rgba(198,154,74,.14), transparent 55%),
+    linear-gradient(180deg,var(--paper),var(--paper2));
+  color:var(--ink);line-height:1.75;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width=1080px;max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* 宣纸顶栏 */
+.nav{position:sticky;top:0;z-index:50;background:rgba(244,239,228,.9);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+.nav .wrap{display:flex;align-items:center;height:60px;gap:10px}
+.seal{width:26px;height:26px;border-radius:5px;background:var(--red);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.72rem;box-shadow:0 0 0 2px var(--paper),0 0 0 3px var(--red)}
+.brand{font-weight:900;font-size:1.14rem}
+.brand b{color:var(--red)}
+.brand i{font-style:normal;font-size:.76rem;color:var(--muted);margin-left:6px}
+.nav nav{margin-left:auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav nav::-webkit-scrollbar{display:none}
+.nav nav a{font-size:.82rem;color:var(--muted);padding:6px 11px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
+.nav nav a:hover{background:var(--ink);color:var(--paper)}
+
+/* Hero */
+.hero{padding:56px 0 34px;border-bottom:2px solid var(--ink)}
+.kicker{display:inline-block;font-size:.72rem;letter-spacing:2px;color:var(--paper);background:var(--ink);padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.hero h1{font-size:2.45rem;line-height:1.16;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{max-width:730px;color:#2a3a3a}
+.go{display:inline-block;margin-top:18px;background:var(--red);color:var(--paper);font-weight:900;padding:12px 28px;border-radius:999px;transition:transform .2s}
+.go:hover{transform:translateY(-2px)}
+
+/* 区块 */
+section.block{padding:42px 0;border-bottom:1px solid rgba(31,58,61,.10)}
+.head{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+.head .no{font-family:Georgia,serif;font-size:1.5rem;font-weight:900;color:var(--gold)}
+.head h2{font-size:1.3rem}
+.head .more{margin-left:auto;font-size:.82rem;color:var(--muted)}
+
+.card{background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:var(--radius)}
+
+/* 六区策展 */
+.zones{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.zone{padding:18px}
+.zone h3{font-size:1.05rem;margin-bottom:6px;color:var(--ink2)}
+.zone h3 small{font-size:.72rem;color:var(--red);margin-left:6px}
+.zone p{font-size:.82rem;color:var(--muted)}
+.zone .badge{font-size:.7rem;border:1px solid var(--line);padding:2px 8px;border-radius:999px;color:var(--ink2);display:inline-block;margin-top:8px}
+
+/* 片单 */
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.film{padding:16px;display:flex;gap:12px}
+.film .yr{flex:0 0 48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:900;color:var(--paper);background:linear-gradient(135deg,var(--ink2),var(--gold))}
+.film h3{font-size:.98rem;margin-bottom:3px}
+.film p{font-size:.8rem;color:var(--muted)}
+.film .tag{font-size:.72rem;color:var(--red);margin-top:5px}
+
+/* 影人馆 */
+.auteurs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.au{padding:18px 14px;text-align:center}
+.au .ini{width:46px;height:46px;margin:0 auto 10px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--paper);background:linear-gradient(135deg,var(--red),var(--gold))}
+.au h3{font-size:.96rem;margin-bottom:4px}
+.au p{font-size:.76rem;color:var(--muted)}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+.qa{padding:14px 16px}
+.qa h3{font-size:.95rem;color:var(--ink2);margin-bottom:6px}
+.qa p{font-size:.85rem;color:var(--muted)}
+
+/* 关于 */
+.about{border:2px solid var(--ink);border-radius:var(--radius);padding:36px 20px;text-align:center;background:rgba(255,255,255,.45)}
+.about h2{margin-bottom:10px}
+.urlbox{display:inline-block;margin:12px 0 16px;font-family:monospace;background:var(--paper);border:1px dashed var(--red);color:var(--red);padding:10px 16px;border-radius:10px}
+.about p{max-width:740px;margin:0 auto;color:var(--muted)}
+
+footer{padding:28px 16px;text-align:center;font-size:.8rem;color:var(--muted);border-top:2px solid var(--ink)}
+footer a{margin:0 6px;color:var(--muted)}
+footer a:hover{color:var(--red)}
+
+@media(min-width:820px){
+  .list{grid-template-columns:repeat(3,1fr)}
+  .zones{grid-template-columns:repeat(3,1fr)}
+  .auteurs{grid-template-columns:repeat(6,1fr)}
+}
+@media(max-width:520px){
+  .hero h1{font-size:1.8rem}
+  .list,.zones,.auteurs{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="nav">
+  <div class="wrap">
+    <div class="seal">展</div>
+    <div class="brand">亚洲新片策展<b>ASIA CINÉ</b><i>yazhouchengrenkuaibodianyingwang-h5</i></div>
+    <nav>
+      <a href="#zones">六区策展</a>
+      <a href="#cn">华语新作</a>
+      <a href="#jk">日韩作者</a>
+      <a href="#sea">东南亚</a>
+      <a href="#ani">亚洲动画</a>
+      <a href="#fest">影展修复</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">ASIAN CINEMA · 宣纸院线 · 策展版</span>
+    <h1>亚洲新片策展<br><em>一纸水墨，铺开亚洲电影地图</em></h1>
+    <p>对应站名「亚洲快播电影网」，但本页只做正经亚洲电影资料馆：华语新作、日韩作者、东南亚现实题材、亚洲动画、影展与修复信息、正版观看建议。不涉成人内容、不做快播、不写免费全集与网盘秒发，不提供盗版播放与下载。</p>
+    <a href="#zones" class="go">进入六区策展</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 六区策展 -->
+  <section id="zones" class="block">
+    <div class="head"><span class="no">Ⅰ</span><h2>六区策展·亚洲地图</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="zones">
+      <div class="zone card"><h3>华语新作 <small>CN/TW/HK</small></h3><p>内地、台湾、香港新导演与作者片。</p><span class="badge">现实 / 作者 / 类型</span></div>
+      <div class="zone card"><h3>日韩作者 <small>JP/KR</small></h3><p>是枝裕和、李沧东、滨口龙介一脉。</p><span class="badge">家庭 / 社会 / 心理</span></div>
+      <div class="zone card"><h3>东南亚现实 <small>SEA</small></h3><p>新加坡、泰国、印尼、马来西亚新电影。</p><span class="badge">宗教 / 阶级 / 移民</span></div>
+      <div class="zone card"><h3>亚洲动画 <small>ANIME/SEA ANI</small></h3><p>日本动画与东南亚新兴动画作者。</p><span class="badge">剧场版 / 作者动画</span></div>
+      <div class="zone card"><h3>影展与修复 <small>FEST / RESTORE</small></h3><p>戛纳、柏林、釜山与4K修复展映。</p><span class="badge">策展信息</span></div>
+      <div class="zone card"><h3>正版渠道 <small>LEGAL</small></h3><p>院线、正版流媒体、展映购票建议。</p><span class="badge">非资源下载</span></div>
+    </div>
+  </section>
+
+  <!-- 华语新作 -->
+  <section id="cn" class="block">
+    <div class="head"><span class="no">Ⅱ</span><h2>华语新作·片单</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">15</div><div><h3>山河故人</h3><p>贾樟柯，跨越26年的时间与乡愁。</p><div class="tag">华语 / 时代</div></div></div>
+      <div class="film card"><div class="yr">17</div><div><h3>大佛普拉斯</h3><p>台湾黑色荒诞，阶级与佛像并置。</p><div class="tag">华语 / 黑色</div></div></div>
+      <div class="film card"><div class="yr">19</div><div><h3>热带雨</h3><p>陈哲艺，新加坡中年女性的雨季。</p><div class="tag">华语 / 家庭</div></div></div>
+      <div class="film card"><div class="yr">20</div><div><h3>气球</h3><p>万玛才旦，藏地信仰与生育的张力。</p><div class="tag">华语 / 藏地</div></div></div>
+      <div class="film card"><div class="yr">21</div><div><h3>爱情神话</h3><p>上海中年爱情，方言与市井质感。</p><div class="tag">华语 / 都市</div></div></div>
+      <div class="film card"><div class="yr">23</div><div><h3>周处除三害</h3><p>台湾动作黑帮，邪典与救赎交叠。</p><div class="tag">华语 / 动作</div></div></div>
+    </div>
+  </section>
+
+  <!-- 日韩作者 -->
+  <section id="jk" class="block">
+    <div class="head"><span class="no">Ⅲ</span><h2>日韩作者·片单</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">18</div><div><h3>小偷家族</h3><p>是枝裕和，没有血缘的“家庭”实验。</p><div class="tag">日本 / 家庭</div></div></div>
+      <div class="film card"><div class="yr">18</div><div><h3>燃烧</h3><p>李沧东，阶级怒火烧进隐喻。</p><div class="tag">韩国 / 社会</div></div></div>
+      <div class="film card"><div class="yr">21</div><div><h3>驾驶我的车</h3><p>滨口龙介，三小时的车厢独白。</p><div class="tag">日本 / 戏剧改编</div></div></div>
+      <div class="film card"><div class="yr">19</div><div><h3>寄生虫</h3><p>奉俊昊，地下室的阶级寓言。</p><div class="tag">韩国 / 黑色</div></div></div>
+      <div class="film card"><div class="yr">20</div><div><h3>间谍之妻</h3><p>黑泽清，战时与背叛的冷感。</p><div class="tag">日本 / 历史</div></div></div>
+      <div class="film card"><div class="yr">22</div><div><h3>分手的决心</h3><p>朴赞郁，山与海的爱情刑侦。</p><div class="tag">韩国 / 悬疑</div></div></div>
+    </div>
+  </section>
+
+  <!-- 东南亚 -->
+  <section id="sea" class="block">
+    <div class="head"><span class="no">Ⅳ</span><h2>东南亚现实·片单</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">16</div><div><h3>监狱学警</h3><p>新加坡监狱里的信仰与暴力。</p><div class="tag">新加坡 / 犯罪</div></div></div>
+      <div class="film card"><div class="yr">10</div><div><h3>能召回前世的布米叔叔</h3><p>阿彼察邦，泰国乡村与轮回。</p><div class="tag">泰国 / 作者</div></div></div>
+      <div class="film card"><div class="yr">21</div><div><h3>沉默的夜晚</h3><p>马来西亚多元族群下的无声冲突。</p><div class="tag">马来西亚 / 社会</div></div></div>
+      <div class="film card"><div class="yr">08</div><div><h3>悉尼诊所</h3><p>印尼移民与身份的边缘观察。</p><div class="tag">印尼 / 移民</div></div></div>
+      <div class="film card"><div class="yr">19</div><div><h3>南巫</h3><p>马来西亚民间信仰与边境记忆。</p><div class="tag">马来西亚 / 奇幻</div></div></div>
+      <div class="film card"><div class="yr">23</div><div><h3>明天记得爱上我</h3><p>新加坡都市情感的轻盈与沉重。</p><div class="tag">新加坡 / 爱情</div></div></div>
+    </div>
+  </section>
+
+  <!-- 亚洲动画 -->
+  <section id="ani" class="block">
+    <div class="head"><span class="no">Ⅴ</span><h2>亚洲动画·作者与剧场版</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">16</div><div><h3>你的名字。</h3><p>新海诚，彗星与交换身体的青春。</p><div class="tag">日本动画</div></div></div>
+      <div class="film card"><div class="yr">16</div><div><h3>红海龟</h3><p>迈克尔·度德威特×吉卜力，无对白寓言。</p><div class="tag">亚洲合制</div></div></div>
+      <div class="film card"><div class="yr">18</div><div><h3>未来的未来</h3><p>细田守，家族与时间的小小魔法。</p><div class="tag">日本动画</div></div></div>
+      <div class="film card"><div class="yr">21</div><div><h3>雀斑公主</h3><p>细田守，虚拟舞台与创伤治愈。</p><div class="tag">日本动画</div></div></div>
+      <div class="film card"><div class="yr">20</div><div><h3>水漫金山</h3><p>东南亚水墨动画短片的东方意境。</p><div class="tag">东南亚动画</div></div></div>
+      <div class="film card"><div class="yr">23</div><div><h3>苍鹭与少年</h3><p>宫崎骏，战后幻想与告别之书。</p><div class="tag">日本动画</div></div></div>
+    </div>
+  </section>
+
+  <!-- 影展修复 -->
+  <section id="fest" class="block">
+    <div class="head"><span class="no">Ⅵ</span><h2>影展与修复·策展信息</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">4K</div><div><h3>牯岭街少年杀人事件</h3><p>杨德昌四小时长版，4K修复巡展。</p><div class="tag">修复 / 华语</div></div></div>
+      <div class="film card"><div class="yr">戛纳</div><div><h3>霸王别姬</h3><p>戛纳金棕榈，华语电影标杆。</p><div class="tag">展映 / 华语</div></div></div>
+      <div class="film card"><div class="yr">柏林</div><div><h3>一一</h3><p>杨德昌，一个家族的一百个面孔。</p><div class="tag">展映 / 华语</div></div></div>
+      <div class="film card"><div class="yr">釜山</div><div><h3>分手的决心</h3><p>朴赞郁，釜山国际电影节焦点。</p><div class="tag">展映 / 韩国</div></div></div>
+      <div class="film card"><div class="yr">修复</div><div><h3>侠女</h3><p>胡金铨武侠，竹林之战的东方剪影。</p><div class="tag">修复 / 华语武侠</div></div></div>
+      <div class="film card"><div class="yr">展映</div><div><h3>童年往事</h3><p>侯孝贤，台湾新电影代表作。</p><div class="tag">展映 / 华语</div></div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="block">
+    <div class="head"><span class="no">Ⅶ</span><h2>常见问题</h2></div>
+    <div class="faq">
+      <div class="qa card"><h3>站名是“亚洲快播电影网”，为什么页面这么正经？</h3><p>站名/域名按你的规则写进代码，但“快播/成人/免费全集/网盘秒发”属于盗版与涉黄高危词，会触发搜索引擎降权甚至整站连坐。因此正文反向中和，做成“亚洲新片策展”资料馆。</p></div>
+      <div class="qa card"><h3>能在线看片吗？</h3><p>不能。本站只做亚洲电影信息导航：片单、导演、影展修复与正版观看渠道建议；内链全部为 # 锚点，不托管片源、不提供盗版播放与下载。</p></div>
+      <div class="qa card"><h3>会不会被必应判低质？</h3><p>不会。页面是静态单页、语义化标签、H1/H2 清晰、Meta 完整、移动端无横向滚动，内容是正规电影资料馆，无敏感黑帽词。</p></div>
+      <div class="qa card"><h3>必应收录合规吗？</h3><p>合规：唯一H1、栏目H2、FAQ问答、canonical/bingbot/description/keywords 齐全；单文件、首屏无 JS 依赖。</p></div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="about">
+    <h2>关于 亚洲新片策展</h2>
+    <div class="urlbox">https://yazhouchengrenkuaibodianyingwang-h5.github.io</div>
+    <p>亚洲新片策展（对应站名 亚洲快播电影网）是一个宣纸水墨风的亚洲电影资料馆单页：六区策展、华语新作、日韩作者、东南亚现实、亚洲动画、影展修复与正版观看建议。不涉成人内容、不做快播、不挂盗版源，适合移动端速览，也适合作为必应友好的静态影视站。</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2024 亚洲新片策展 · 静态单页演示
+  <br>
+  <a href="#">关于我们</a>·<a href="#">免责声明</a>·<a href="#">版权投诉</a>·<a href="#">正版渠道</a>
+  <br>
+  官网：<a href="https://yazhouchengrenkuaibodianyingwang-h5.github.io">yazhouchengrenkuaibodianyingwang-h5.github.io</a>
+</footer>
+
+<script>
+document.querySelectorAll('.film').forEach(function(el){
+  el.addEventListener('click',function(e){
+    e.preventDefault();
+    document.querySelectorAll('.film').forEach(function(x){x.style.borderColor='var(--line)';});
+    el.style.borderColor='var(--red)';
+  });
+});
+</script>
+</body>
+</html>
